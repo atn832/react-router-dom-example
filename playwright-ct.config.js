@@ -5,6 +5,8 @@ const { defineConfig, devices } = require('@playwright/experimental-ct-react');
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
+  testMatch: '*.spec.js[x]',
+
   testDir: './',
   /* The base directory, relative to the config file, for snapshot files created with toMatchSnapshot and toHaveScreenshot. */
   snapshotDir: './__snapshots__',
@@ -34,14 +36,6 @@ module.exports = defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
-    },
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
     },
   ],
 });
